@@ -1,12 +1,12 @@
 <div align="center">
 
-```
+<pre>
 ░▒▓▓░░░▒█▒▓█▒░█░░░█▒░██▓██▒▒████░░░████░
 █▒░░▒░▒░░░█▓░░█░░░▓░░░░█░░░▒█░░░█░░█░░░▓
 █░█░█░░░▒▒▒░░░▒░█░█░▒░░█░░▒░███▓░░░████░
 █░░█▒░▒░██░▒░░▒█▒██░░░░█░░░░▓░█░░░░▓░░░░
 ▒█▓██▒░█▓▒██░░█░▒░█░░░░▒░░░░▓░░▓▓░░█░▒░░
-```
+</pre>
 
 `// IDENT: 0x717a77747270 · STATUS: ONLINE //`
 
@@ -26,8 +26,8 @@
 ### 📊 Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=qzwtrp&show_icons=true&theme=transparent&title_color=00ffff&text_color=ffffff&icon_color=ff0040&border_color=00ffff&bg_color=00000000" height="170">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qzwtrp&layout=compact&theme=transparent&title_color=00ffff&text_color=ffffff&border_color=00ffff&bg_color=00000000" height="170">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=qzwtrp&theme=dark&hide_border=true&stroke=00ffff&ring=00ffff&fire=ff0040&currStreakLabel=00ffff&background=00000000" height="170">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qzwtrp&layout=compact&theme=dark&hide_border=true&title_color=00ffff&text_color=ffffff&bg_color=00000000" height="170">
 </div>
 
 ---
