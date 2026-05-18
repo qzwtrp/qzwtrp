@@ -21,26 +21,7 @@
 
 </div>
 
-<br>
-
-```
-·················································································
-```
-
-### 📟 currently working on
-
-```python
-{
-  "project"  : "repo-stat",
-  "status"   : "active",
-  "focus"    : ["cli tooling", "github api", "rich tui"],
-  "next"     : "???"
-}
-```
-
-```
-·················································································
-```
+---
 
 ### 📊 stats
 
@@ -52,9 +33,7 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=qzwtrp&theme=react-dark&hide_border=true&color=00ffff&line=00ffff&point=ff0040&area=true&area_color=00ffff" width="100%">
 </div>
 
-```
-·················································································
-```
+---
 
 ### ⚡ tech stack
 
@@ -69,9 +48,7 @@
 
 </div>
 
-```
-·················································································
-```
+---
 
 ### 🛠️ projects
 
@@ -79,20 +56,7 @@
 |---------|-------------|------|
 | [`repo-stat`](https://github.com/qzwtrp/repo-stat) | CLI GitHub profile analyzer with Rich tables | Python · Click · httpx |
 
-```
-·················································································
-```
-
-### 🧠 system
-
-```
-OS      : Arch Linux
-Shell   : fish
-Editor  : VS Code
-Uptime  : ∞
-```
-
-<br>
+---
 
 <div align="center">
   <em>"The future is already here — it's just not evenly distributed."</em>
