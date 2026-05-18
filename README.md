@@ -55,8 +55,7 @@
 
 | project | description | tech |
 |---------|-------------|------|
-| [`repo-stat`](https://github.com/qzwtrp/repo-stat) | CLI GitHub profile analyzer with Rich tables | Python · Click · httpx |
-
+| [`repo-stat`](https://github.com/qzwtrp/repo-stat) | Beautiful CLI analyzer for GitHub repository statistics | Python |
 ---
 
 <div align="center">

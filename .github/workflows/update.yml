@@ -2,8 +2,11 @@ name: Update Profile
 
 on:
   schedule:
-    - cron: "0 6 * * *"  # 06:00 UTC every day
+    - cron: "0 6 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update:
@@ -11,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -20,6 +23,8 @@ jobs:
 
       - name: Generate README
         run: python update_readme.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and push
         run: |
@@ -27,8 +32,8 @@ jobs:
           git config user.email "qzwtrp@users.noreply.github.com"
           git add README.md
           if git diff --cached --quiet; then
-            echo "No changes to commit"
+            echo "No changes"
             exit 0
           fi
-          git commit -m "chore: daily update $(date -u +%Y-%m-%d)"
+          git commit -m "chore: update projects $(date -u +%Y-%m-%d)"
           git push
