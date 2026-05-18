@@ -24,8 +24,8 @@
 | Metric | Value |
 |--------|-------|
 | **OS** | Arch Linux |
-| **Shell** | zsh |
-| **Editor** | nvim |
+| **Shell** | fish |
+| **Editor** | VS Code |
 | **Lang** | Python, Lua, Bash |
 | **Uptime** | `{{uptime}}` |
 | **Year Progress** | `{{progress_bar}}` `{{progress_percent}}%` |

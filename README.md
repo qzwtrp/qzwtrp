@@ -24,8 +24,8 @@
 | Metric | Value |
 |--------|-------|
 | **OS** | Arch Linux |
-| **Shell** | zsh |
-| **Editor** | nvim |
+| **Shell** | fish |
+| **Editor** | VS Code |
 | **Lang** | Python, Lua, Bash |
 | **Uptime** | `752 days` |
 | **Year Progress** | `███████████░░░░░░░░░░░░░░░░░░░` `37.6%` |
@@ -34,8 +34,8 @@
 
 ### 📡 Daily Transmission
 
-> *"Programs must be written for people to read, and only incidentally for machines to execute."*
-> — Harold Abelson
+> *"Bad programmers worry about the code. Good programmers worry about data structures and their relationships."*
+> — Linus Torvalds
 
 <br/>
 
@@ -51,7 +51,7 @@ Docker  ████████████████░░░░░░░░
 <br/>
 
 ### 🕒 Last Updated
-`2026-05-18 08:51 UTC`
+`2026-05-18 09:22 UTC`
 
 <br/>
 
