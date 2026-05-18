@@ -1,42 +1,40 @@
-<div align="center">
+<p align="center">
+  <img src="assets/banner.svg" alt="qzwtrp" width="100%">
+</p>
 
-<pre>
+<p align="center">
+  <img src="https://img.shields.io/badge/Arch%20Linux-0%2C%20btw-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white&color=00ffff">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white&color=ff0040">
+  <img src="https://img.shields.io/badge/Fish%20Shell-4D4D4D?style=for-the-badge&color=ff00ff">
+</p>
+
+---
+
+<pre align="center">
 ╔══════════════════════════════════════════════════════════════════╗
 ║                                                                  ║
-║   ░█▀▀░█░█░█▀▄░▀█▀░█▀█░█▀▄                                        ║
-║   ░█▀▀░▄▀▄░█▀▄░░█░░█▀█░█▀▄                                        ║
-║   ░▀░░░▀░▀░▀░▀░░▀░░▀░▀░▀░▀                                        ║
-║                                                                  ║
-║   ░█▀▀░█▀█░█░█░█▀▀░█▀▄░█▀▀░█▀█░█▀█░▀█▀░█▀▀                       ║
-║   ░█░░░█░█░▀▄▀░█▀▀░█▀▄░█░░░█▀█░█░█░░█░░▀▀█                       ║
-║   ░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀░▀▀▀                       ║
+║                    ░█▀▀░█░█░█▀▄░▀█▀░█▀█░█▀▄                     ║
+║                    ░█▀▀░▄▀▄░█▀▄░░█░░█▀█░█▀▄                     ║
+║                    ░▀░░░▀░▀░▀░▀░░▀░░▀░▀░▀░▀                     ║
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 </pre>
 
-<br/>
+<p align="center">
+  <em>Developer // Hacker // Creator</em>
+</p>
 
-### 🧠 System Status
+---
 
-| Metric | Value |
-|--------|-------|
-| **OS** | Arch Linux |
-| **Shell** | fish |
-| **Editor** | VS Code |
-| **Languages** | Python, Lua, Bash, C++, Rust |
-| **Uptime** | `752 days` |
-| **Year Progress** | `███████████░░░░░░░░░░░░░░░░░░░` `37.6%` |
+### 📊 Stats
 
-<br/>
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=qzwtrp&show_icons=true&theme=transparent&title_color=00ffff&text_color=ffffff&icon_color=ff0040&border_color=00ffff&bg_color=00000000" alt="GitHub Stats">
+</p>
 
-### 📡 Daily Transmission
+---
 
-> *"The best way to predict the future is to implement it."*
-> — David Heinemeier Hansson
-
-<br/>
-
-### ⚡ Proficiency
+### ⚡ Tech Stack
 
 ```
 Python  ████████████████████████████████████████░░░░  90%
@@ -46,21 +44,25 @@ Bash    ██████████░░░░░░░░░░░░░░
 Lua     ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  20%
 ```
 
-<br/>
+---
 
-### 🛠️ Featured Projects
+### 🛠️ Projects
 
-| Project | Description | Language |
-|---------|-------------|----------|
-| [`repo-stat`](https://github.com/qzwtrp/repo-stat) | Beautiful CLI analyzer for GitHub statistics | Python |
+| Project | Description | Tech |
+|---------|-------------|------|
+| [`repo-stat`](https://github.com/qzwtrp/repo-stat) | CLI GitHub profile analyzer with Rich tables | Python, Click, httpx |
 
-<br/>
+---
 
-### 🕒 Last Updated
-`2026-05-18 UTC` · *automated by GitHub Actions*
+### 🧠 System Status
 
-<br/>
+| | |
+|---|---|
+| **OS** | Arch Linux |
+| **Shell** | fish |
+| **Editor** | VS Code |
+| **Uptime** | `∞` |
+
+---
 
 *"The future is already here — it's just not evenly distributed."*
-
-</div>
