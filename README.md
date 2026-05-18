@@ -10,7 +10,7 @@
 
 `// IDENT: 0x717a77747270 · STATUS: ONLINE //`
 
-*developer · hacker · creator*
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=14&duration=2800&pause=1200&color=00FFFF&center=true&vCenter=true&width=435&lines=%3E+initializing+session...;%3E+loading+modules...;%3E+access+granted.;%3E+developer+%2F%2F+hacker+%2F%2F+creator)](https://git.io/typing-svg)
 
 ---
 
@@ -21,18 +21,42 @@
 
 </div>
 
----
+<br>
 
-### 📊 Stats
+```
+·················································································
+```
+
+### 📟 currently working on
+
+```python
+{
+  "project"  : "repo-stat",
+  "status"   : "active",
+  "focus"    : ["cli tooling", "github api", "rich tui"],
+  "next"     : "???"
+}
+```
+
+```
+·················································································
+```
+
+### 📊 stats
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=qzwtrp&theme=dark&hide_border=true&stroke=00ffff&ring=00ffff&fire=ff0040&currStreakLabel=00ffff&background=00000000" height="170">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qzwtrp&layout=compact&theme=dark&hide_border=true&title_color=00ffff&text_color=ffffff&bg_color=00000000" height="170">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=qzwtrp&theme=dark&hide_border=true&stroke=00ffff&ring=00ffff&fire=ff0040&currStreakLabel=00ffff&background=00000000" height="160">
 </div>
 
----
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=qzwtrp&theme=react-dark&hide_border=true&color=00ffff&line=00ffff&point=ff0040&area=true&area_color=00ffff" width="100%">
+</div>
 
-### ⚡ Tech Stack
+```
+·················································································
+```
+
+### ⚡ tech stack
 
 <div align="center">
 
@@ -45,17 +69,21 @@
 
 </div>
 
----
+```
+·················································································
+```
 
-### 🛠️ Projects
+### 🛠️ projects
 
-| Project | Description | Tech |
+| project | description | tech |
 |---------|-------------|------|
 | [`repo-stat`](https://github.com/qzwtrp/repo-stat) | CLI GitHub profile analyzer with Rich tables | Python · Click · httpx |
 
----
+```
+·················································································
+```
 
-### 🧠 System
+### 🧠 system
 
 ```
 OS      : Arch Linux
@@ -64,7 +92,7 @@ Editor  : VS Code
 Uptime  : ∞
 ```
 
----
+<br>
 
 <div align="center">
   <em>"The future is already here — it's just not evenly distributed."</em>
