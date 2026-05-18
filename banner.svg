@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%">
+  <defs>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff41;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="200" fill="#0a0a0f" rx="10"/>
+  
+  <!-- Grid lines -->
+  <g stroke="#1a1a2e" stroke-width="1">
+    <line x1="0" y1="40" x2="800" y2="40"/>
+    <line x1="0" y1="80" x2="800" y2="80"/>
+    <line x1="0" y1="120" x2="800" y2="120"/>
+    <line x1="0" y1="160" x2="800" y2="160"/>
+    <line x1="100" y1="0" x2="100" y2="200"/>
+    <line x1="200" y1="0" x2="200" y2="200"/>
+    <line x1="300" y1="0" x2="300" y2="200"/>
+    <line x1="400" y1="0" x2="400" y2="200"/>
+    <line x1="500" y1="0" x2="500" y2="200"/>
+    <line x1="600" y1="0" x2="600" y2="200"/>
+    <line x1="700" y1="0" x2="700" y2="200"/>
+  </g>
+  
+  <!-- Border -->
+  <rect x="5" y="5" width="790" height="190" fill="none" stroke="url(#glow)" stroke-width="2" rx="8"/>
+  
+  <!-- Glitch text QZWTRP -->
+  <text x="400" y="110" font-family="monospace" font-size="60" font-weight="bold" fill="#00ff41" text-anchor="middle" filter="url(#blur)">QZWTRP</text>
+  <text x="400" y="110" font-family="monospace" font-size="60" font-weight="bold" fill="#00d4ff" text-anchor="middle" opacity="0.5" transform="translate(3,0)">QZWTRP</text>
+  <text x="400" y="110" font-family="monospace" font-size="60" font-weight="bold" fill="#ff00ff" text-anchor="middle" opacity="0.3" transform="translate(-3,0)">QZWTRP</text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="160" font-family="monospace" font-size="20" fill="#00ff41" text-anchor="middle">ARCH LINUX | PYTHON | TERMINAL</text>
+  
+  <!-- Corner brackets -->
+  <line x1="20" y1="30" x2="20" y2="50" stroke="#00ff41" stroke-width="2"/>
+  <line x1="20" y1="30" x2="40" y2="30" stroke="#00ff41" stroke-width="2"/>
+  <line x1="780" y1="30" x2="780" y2="50" stroke="#00ff41" stroke-width="2"/>
+  <line x1="760" y1="30" x2="780" y2="30" stroke="#00ff41" stroke-width="2"/>
+  <line x1="20" y1="170" x2="20" y2="150" stroke="#00ff41" stroke-width="2"/>
+  <line x1="20" y1="170" x2="40" y2="170" stroke="#00ff41" stroke-width="2"/>
+  <line x1="780" y1="170" x2="780" y2="150" stroke="#00ff41" stroke-width="2"/>
+  <line x1="760" y1="170" x2="780" y2="170" stroke="#00ff41" stroke-width="2"/>
+  
+  <!-- Scanline -->
+  <rect x="0" y="95" width="800" height="2" fill="#00ff41" opacity="0.3">
+    <animate attributeName="y" from="0" to="200" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.3;0" dur="4s" repeatCount="indefinite"/>
+  </rect>
+</svg>
