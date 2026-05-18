@@ -18,6 +18,7 @@
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Shell](https://img.shields.io/badge/Fish_Shell-4D4D4D?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://fishshell.com)
 [![Editor](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com)
+[![Stars](https://img.shields.io/github/stars/qzwtrp?style=for-the-badge&logo=github&logoColor=white&label=total%20stars&color=ff0040)](https://github.com/qzwtrp?tab=repositories)
 
 </div>
 
