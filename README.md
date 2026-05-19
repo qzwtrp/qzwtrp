@@ -55,6 +55,7 @@
 
 | project | description | tech |
 |---------|-------------|------|
+| [`repo-stat`](https://github.com/qzwtrp/repo-stat) | Beautiful CLI analyzer for GitHub repository statistics | Python |
 ---
 
 <div align="center">
