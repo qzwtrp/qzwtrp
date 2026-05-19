@@ -20,7 +20,8 @@ def api(path):
 
 
 def fetch_repos():
-    repos = api(f"/users/{USERNAME}/repos?per_page=100&type=owner")
+    # /user/repos returns both public and private repos for the authenticated user
+    repos = api("/user/repos?per_page=100&sort=pushed")
     filtered = [r for r in repos if r["name"] != USERNAME and not r["fork"]]
     filtered.sort(key=lambda r: r["pushed_at"], reverse=True)
     return filtered
