@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Auto-update README.md projects table from GitHub GraphQL API."""
+"""Auto-update README.md projects table from GitHub public API."""
 
 import json
 import os
@@ -10,46 +10,31 @@ USERNAME = "qzwtrp"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
 
-def graphql(query, variables=None):
+def api(path):
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "qzwtrp-profile-update",
-        "Content-Type": "application/json",
     }
     if TOKEN:
         headers["Authorization"] = f"Bearer {TOKEN}"
-
-    payload = json.dumps({"query": query, "variables": variables or {}}).encode()
-    req = urllib.request.Request("https://api.github.com/graphql", data=payload, headers=headers)
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read())
+    req = urllib.request.Request(f"https://api.github.com{path}", headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode()
+        raise RuntimeError(f"GitHub API error {e.code}: {body}") from e
 
 
 def fetch_repos():
-    query = """
-    {
-      viewer {
-        repositories(first: 100, ownerAffiliations: [OWNER], orderBy: {field: PUSHED_AT, direction: DESC}) {
-          nodes {
-            name
-            description
-            pushedAt
-            isPrivate
-            primaryLanguage { name }
-            isArchived
-            nameWithOwner
-            url
-          }
-        }
-      }
-    }
-    """
-    data = graphql(query)
-    if "errors" in data:
-        raise RuntimeError(f"GraphQL errors: {data['errors']}")
-
-    repos = data["data"]["viewer"]["repositories"]["nodes"]
-    filtered = [r for r in repos if r["name"] != USERNAME and not r.get("isArchived", False)]
+    repos = api(f"/users/{USERNAME}/repos?per_page=100&type=owner")
+    filtered = [
+        r for r in repos
+        if r["name"] != USERNAME
+        and not r["fork"]
+        and not r.get("private", False)
+    ]
+    filtered.sort(key=lambda r: r["pushed_at"], reverse=True)
     return filtered
 
 
@@ -58,8 +43,8 @@ def build_projects_table(repos):
     for r in repos[:10]:
         name = r["name"]
         desc = (r["description"] or "no description").replace("|", "\\|")
-        lang = r["primaryLanguage"]["name"] if r.get("primaryLanguage") else "—"
-        url = r["url"]
+        lang = r["language"] or "—"
+        url = r["html_url"]
         lines.append(f"| [`{name}`]({url}) | {desc} | {lang} |")
     return "\n".join(lines)
 
@@ -78,7 +63,7 @@ def update_readme():
 
     if pattern.search(content):
         content = pattern.sub(r"\1" + table + r"\2", content)
-        print(f"Updated projects table with {len(repos[:10])} repos")
+        print(f"Updated projects table with {len(repos[:10])} public repos")
     else:
         print("WARNING: Could not find projects section in README")
         return
