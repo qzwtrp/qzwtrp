@@ -11,7 +11,10 @@ TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
 
 def api(path):
-    headers = {"Accept": "application/vnd.github+json"}
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "qzwtrp-profile-update",
+    }
     if TOKEN:
         headers["Authorization"] = f"Bearer {TOKEN}"
     req = urllib.request.Request(f"https://api.github.com{path}", headers=headers)
