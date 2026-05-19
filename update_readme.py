@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Auto-update README.md projects table from GitHub API."""
+"""Auto-update README.md projects table from GitHub GraphQL API."""
 
 import json
 import os
@@ -10,23 +10,46 @@ USERNAME = "qzwtrp"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
 
-def api(path):
+def graphql(query, variables=None):
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "qzwtrp-profile-update",
+        "Content-Type": "application/json",
     }
     if TOKEN:
         headers["Authorization"] = f"Bearer {TOKEN}"
-    req = urllib.request.Request(f"https://api.github.com{path}", headers=headers)
+
+    payload = json.dumps({"query": query, "variables": variables or {}}).encode()
+    req = urllib.request.Request("https://api.github.com/graphql", data=payload, headers=headers)
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.loads(resp.read())
 
 
 def fetch_repos():
-    # /user/repos returns both public and private repos for the authenticated user
-    repos = api("/user/repos?per_page=100&sort=pushed")
-    filtered = [r for r in repos if r["name"] != USERNAME and not r["fork"]]
-    filtered.sort(key=lambda r: r["pushed_at"], reverse=True)
+    query = """
+    {
+      viewer {
+        repositories(first: 100, ownerAffiliations: [OWNER], orderBy: {field: PUSHED_AT, direction: DESC}) {
+          nodes {
+            name
+            description
+            pushedAt
+            isPrivate
+            primaryLanguage { name }
+            isArchived
+            nameWithOwner
+            url
+          }
+        }
+      }
+    }
+    """
+    data = graphql(query)
+    if "errors" in data:
+        raise RuntimeError(f"GraphQL errors: {data['errors']}")
+
+    repos = data["data"]["viewer"]["repositories"]["nodes"]
+    filtered = [r for r in repos if r["name"] != USERNAME and not r.get("isArchived", False)]
     return filtered
 
 
@@ -35,8 +58,8 @@ def build_projects_table(repos):
     for r in repos[:10]:
         name = r["name"]
         desc = (r["description"] or "no description").replace("|", "\\|")
-        lang = r["language"] or "—"
-        url = r["html_url"]
+        lang = r["primaryLanguage"]["name"] if r.get("primaryLanguage") else "—"
+        url = r["url"]
         lines.append(f"| [`{name}`]({url}) | {desc} | {lang} |")
     return "\n".join(lines)
 
