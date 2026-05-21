@@ -45,6 +45,9 @@ def build_projects_table(repos):
         lang = r["language"] or "—"
         url = r["html_url"]
         lines.append(f"| [`{name}`]({url}) | {desc} | {lang} |")
+    from datetime import datetime, timezone
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    lines.append(f"> last sync: {ts}")
     NL = chr(10)
     return NL.join(lines)
 
