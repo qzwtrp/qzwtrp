@@ -27,7 +27,7 @@ def api(path):
 
 
 def fetch_repos():
-    repos = api(f"/users/{USERNAME}/repos?per_page=100&type=owner")
+    repos = api(f"/users/{USERNAME}/repos?per_page=100\u0026type=owner")
     filtered = [
         r for r in repos
         if r["name"] != USERNAME
@@ -42,12 +42,12 @@ def build_projects_table(repos):
     lines = ["| project | description | tech |", "|---------|-------------|------|"]
     for r in repos[:10]:
         name = r["name"]
-        desc = (r["description"] or "no description").replace("|", "\|")
+        desc = (r["description"] or "no description").replace("|", chr(92) + "|")
         lang = r["language"] or "—"
         url = r["html_url"]
         lines.append(f"| [`{name}`]({url}) | {desc} | {lang} |")
-    return "
-".join(lines)
+    NL = chr(10)
+    return NL.join(lines)
 
 
 def update_readme():
@@ -57,16 +57,14 @@ def update_readme():
     repos = fetch_repos()
     table = build_projects_table(repos)
 
+    NL = chr(10)
     pattern = re.compile(
-        r"(### 🛠️ projects
-
-)[\s\S]*?(
----)",
+        r"(### \U0001f6e0\ufe0f projects" + NL + NL + ")[\s\S]*?(" + NL + "---)",
         re.MULTILINE,
     )
 
     if pattern.search(content):
-        content = pattern.sub(r"" + table + r"", content)
+        content = pattern.sub(r"\1" + table + r"\2", content)
         print(f"Updated projects table with {len(repos[:10])} public repos")
     else:
         print("WARNING: Could not find projects section in README")
