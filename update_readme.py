@@ -42,11 +42,12 @@ def build_projects_table(repos):
     lines = ["| project | description | tech |", "|---------|-------------|------|"]
     for r in repos[:10]:
         name = r["name"]
-        desc = (r["description"] or "no description").replace("|", "\\|")
+        desc = (r["description"] or "no description").replace("|", "\|")
         lang = r["language"] or "—"
         url = r["html_url"]
         lines.append(f"| [`{name}`]({url}) | {desc} | {lang} |")
-    return "\n".join(lines)
+    return "
+".join(lines)
 
 
 def update_readme():
@@ -57,12 +58,15 @@ def update_readme():
     table = build_projects_table(repos)
 
     pattern = re.compile(
-        r"(### \U0001f6e0\ufe0f projects\n\n)[\s\S]*?(\n---)",
+        r"(### 🛠️ projects
+
+)[\s\S]*?(
+---)",
         re.MULTILINE,
     )
 
     if pattern.search(content):
-        content = pattern.sub(r"\1" + table + r"\2", content)
+        content = pattern.sub(r"" + table + r"", content)
         print(f"Updated projects table with {len(repos[:10])} public repos")
     else:
         print("WARNING: Could not find projects section in README")
