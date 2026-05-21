@@ -30,8 +30,7 @@ def fetch_repos():
     repos = api(f"/users/{USERNAME}/repos?per_page=100\u0026type=owner")
     filtered = [
         r for r in repos
-        if r["name"] != USERNAME
-        and not r["fork"]
+        if not r["fork"]
         and not r.get("private", False)
     ]
     filtered.sort(key=lambda r: r["pushed_at"], reverse=True)
